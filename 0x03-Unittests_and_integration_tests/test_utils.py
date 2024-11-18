@@ -8,6 +8,7 @@ from utils import access_nested_map, get_json, memoize
 from typing import Dict, Tuple, Union
 from unittest.mock import patch, Mock
 
+
 class TestAccessNestedMap(unittest.TestCase):
     """Test for access_nested_map"""
 
