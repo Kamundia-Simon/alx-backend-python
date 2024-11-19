@@ -10,7 +10,7 @@ from typing import Dict
 
 
 class TestGithubOrgClient(unittest.TestCase):
-    """Tests the `GithubOrgClient` class."""
+    """Tests case for GithubOrgClient class."""
     @parameterized.expand([
         ("google", {'login': "google"}),
         ("abc", {'login': "abc"}),
@@ -19,7 +19,7 @@ class TestGithubOrgClient(unittest.TestCase):
         "client.get_json",
     )
     def test_org(self, org: str, res: Dict, mocked_fxn: MagicMock) -> None:
-        """Tests org method."""
+        """Tests org method returns the correct value."""
         mocked_fxn.return_value = MagicMock(return_value=res)
         org_client = GithubOrgClient(org)
         self.assertEqual(org_client.org(), res)
